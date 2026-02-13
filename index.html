@@ -18,7 +18,7 @@ body {
 }
 
 .envelope {
-    width: 500px;
+    width: 550px;
     max-width: 95%;
     perspective: 1200px;
     cursor: pointer;
@@ -26,45 +26,39 @@ body {
 
 .card {
     width: 100%;
-    position: relative;
     transform-style: preserve-3d;
     transition: transform 0.8s ease;
+    position: relative;
 }
 
 .card.flipped {
     transform: rotateY(180deg);
 }
 
+/* 🔥 FIX UTAMA ADA DI SINI */
 .front, .back {
     width: 100%;
-    min-height: 450px;
+    backface-visibility: hidden;
     border-radius: 15px;
     box-shadow: 0 10px 30px rgba(0,0,0,0.2);
-    backface-visibility: hidden;
-    position: absolute;
-    top: 0;
-    left: 0;
+    padding: 40px;
+    box-sizing: border-box;
 }
 
 .front {
     background: linear-gradient(45deg, #e91e63, #ff4081);
-    display: flex;
-    justify-content: center;
-    align-items: center;
-    text-align: center;
     color: white;
-    font-size: 1.5em;
+    text-align: center;
+    font-size: 1.6em;
     font-weight: bold;
-    padding: 30px;
 }
 
 .back {
     background: white;
     transform: rotateY(180deg);
-    padding: 35px;
-    box-sizing: border-box;
-    text-align: center;
-    position: relative;
+    position: absolute;
+    top: 0;
+    left: 0;
 }
 
 .header {
@@ -75,7 +69,7 @@ body {
 
 .message {
     font-size: 1em;
-    line-height: 1.8;
+    line-height: 1.9;
     color: #333;
     margin: 20px 0;
 }
@@ -85,37 +79,6 @@ body {
     color: #e91e63;
     font-weight: bold;
     margin-top: 20px;
-}
-
-.hearts {
-    position: absolute;
-    top: 0;
-    left: 0;
-    width: 100%;
-    height: 100%;
-    pointer-events: none;
-    overflow: hidden;
-}
-
-.heart {
-    position: absolute;
-    font-size: 20px;
-    animation: fall 6s linear infinite;
-}
-
-.heart:nth-child(1){left:10%;animation-delay:0s;}
-.heart:nth-child(2){left:20%;animation-delay:1s;}
-.heart:nth-child(3){left:30%;animation-delay:2s;}
-.heart:nth-child(4){left:40%;animation-delay:3s;}
-.heart:nth-child(5){left:50%;animation-delay:4s;}
-.heart:nth-child(6){left:60%;animation-delay:5s;}
-.heart:nth-child(7){left:70%;animation-delay:6s;}
-.heart:nth-child(8){left:80%;animation-delay:7s;}
-.heart:nth-child(9){left:90%;animation-delay:8s;}
-
-@keyframes fall {
-    from { transform: translateY(-100%); opacity:1; }
-    to { transform: translateY(100vh); opacity:0; }
 }
 
 @media(max-width:600px){
@@ -137,19 +100,6 @@ body {
         </div>
 
         <div class="back">
-
-            <div class="hearts">
-                <div class="heart">❤️</div>
-                <div class="heart">💖</div>
-                <div class="heart">❤️</div>
-                <div class="heart">💖</div>
-                <div class="heart">❤️</div>
-                <div class="heart">💖</div>
-                <div class="heart">❤️</div>
-                <div class="heart">💖</div>
-                <div class="heart">❤️</div>
-            </div>
-
             <div class="header">
                 💖 Happy Valentine's Day 💖
             </div>
@@ -163,8 +113,8 @@ body {
                 With all my love,<br>
                 Rean
             </div>
-
         </div>
+
     </div>
 </div>
 
@@ -176,4 +126,5 @@ function toggleCard(){
 
 </body>
 </html>
+
 
