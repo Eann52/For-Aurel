@@ -18,8 +18,8 @@
         }
         .envelope {
             position: relative;
-            width: 400px;
-            height: 300px;
+            width: 550px; /* Diperbesar dari 400px */
+            height: 400px; /* Diperbesar dari 300px */
             perspective: 1000px;
             cursor: pointer;
         }
@@ -53,7 +53,7 @@
         .back {
             background: white;
             transform: rotateY(180deg);
-            padding: 20px;
+            padding: 30px; /* Diperbesar dari 20px untuk ruang lebih lega */
             text-align: center;
             display: flex;
             flex-direction: column;
@@ -62,10 +62,10 @@
         .header {
             font-size: 1.8em;
             color: #e91e63;
-            margin-bottom: 10px;
+            margin-bottom: 15px; /* Sedikit diperbesar */
         }
         .message {
-            font-size: 1em;
+            font-size: 1.1em; /* Sedikit diperbesar dari 1em untuk keterbacaan */
             line-height: 1.6;
             color: #333;
             flex-grow: 1;
@@ -74,7 +74,7 @@
             font-size: 1.2em;
             color: #e91e63;
             font-weight: bold;
-            margin-top: 10px;
+            margin-top: 15px; /* Sedikit diperbesar */
         }
         .hearts {
             position: absolute;
@@ -106,8 +106,8 @@
         }
         @media (max-width: 600px) {
             .envelope {
-                width: 300px;
-                height: 250px;
+                width: 400px; /* Diperbesar dari 300px untuk mobile */
+                height: 300px; /* Diperbesar dari 250px untuk mobile */
             }
             .front {
                 font-size: 1.2em;
@@ -116,7 +116,10 @@
                 font-size: 1.5em;
             }
             .message {
-                font-size: 0.9em;
+                font-size: 1em; /* Tetap 1em untuk mobile agar tidak terlalu besar */
+            }
+            .back {
+                padding: 20px; /* Kembali ke 20px untuk mobile agar tidak terlalu padat */
             }
         }
     </style>
